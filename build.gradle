@@ -1,0 +1,51 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'checkstyle'
+}
+
+repositories {
+    // Use JCenter for resolving dependencies.
+    jcenter()
+}
+
+dependencies {
+
+    implementation 'org.springframework.boot:spring-boot-starter-web:2.2.6.RELEASE'
+
+    compile 'com.google.code.gson:gson:2.8.6'
+    compile 'com.google.guava:guava:11.0.2'
+    compile 'org.slf4j:slf4j-api:1.7.25'
+
+    // Declare the dependency for your favourite test framework you want to use in your tests.
+    // TestNG is also supported by the Gradle Test task. Just change the
+    // testCompile dependency to testCompile 'org.testng:testng:6.8.1' and add
+    // 'test.useTestNG()' to your build script.
+    testCompile 'junit:junit:4.13'
+
+    compileOnly 'org.immutables:value:2.7.5'
+    testCompileOnly 'org.immutables:value:2.7.5'
+    annotationProcessor 'org.immutables:value:2.7.5'
+    testAnnotationProcessor 'org.immutables:value:2.7.5'
+}
+
+apply plugin: 'java'
+ext {
+    javaMainClass = 'com.coupon.webapp.CouponWebappDaemon'
+}
+
+application {
+    mainClass = javaMainClass
+}
+
+apply plugin: 'checkstyle'
+checkstyle {
+    toolVersion '7.8.1'
+    configFile file("config/checkstyle/checkstyle.xml")
+}
+checkstyleMain {
+    source ='src/main/java'
+}
+checkstyleTest {
+    source ='src/test/java'
+}
