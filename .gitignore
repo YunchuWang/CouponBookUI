@@ -2,3 +2,6 @@
 /.gradle
 /build
 /gradle
+/src/main/npm/coverage
+/src/main/npm/logs
+/src/main/npm/node_modules
