@@ -1,6 +1,7 @@
 /.idea
 /.gradle
 /build
+/out
 /gradle
 /src/main/npm/coverage
 /src/main/npm/logs
