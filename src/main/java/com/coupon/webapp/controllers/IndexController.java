@@ -38,7 +38,7 @@ public class IndexController {
     @ExceptionHandler(value = NoHandlerFoundException.class)
     public ModelAndView error(final Exception e) throws JsonProcessingException {
         LOG.info("IndexController error: {}", e.getMessage());
-        return handleRequest("app-error");
+        return handleRequest("appError");
     }
 
     private ModelAndView handleRequest(final String appName) throws JsonProcessingException {

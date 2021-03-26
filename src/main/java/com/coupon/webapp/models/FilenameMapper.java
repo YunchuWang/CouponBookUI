@@ -1,15 +1,15 @@
-package com.coupon.webapp.services;
+package com.coupon.webapp.models;
 
 import com.google.common.collect.ImmutableList;
 
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 
-public class FilenameMapper {
+public class FilenameMapper implements FilenameMapperInterface {
     private String host;
     private Map<String, String> filenameMap = Collections.emptyMap();
     private boolean addContextPath = false;
@@ -22,7 +22,8 @@ public class FilenameMapper {
         return host;
     }
 
-    @Nullable
+    @Nonnull
+    @Override
     public Collection<String> getHosts() {
         if (host != null) {
             return ImmutableList.of(host);

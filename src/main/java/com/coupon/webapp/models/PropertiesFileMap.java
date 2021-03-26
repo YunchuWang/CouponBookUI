@@ -1,4 +1,4 @@
-package com.coupon.webapp.services;
+package com.coupon.webapp.models;
 
 import com.google.common.collect.ImmutableList;
 import org.slf4j.Logger;

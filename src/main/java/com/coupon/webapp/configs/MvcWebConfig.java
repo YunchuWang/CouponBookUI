@@ -1,7 +1,8 @@
 package com.coupon.webapp.configs;
 
-import com.coupon.webapp.services.FilenameMapper;
-import com.coupon.webapp.services.PropertiesFileMap;
+import com.coupon.webapp.models.FilenameMapper;
+import com.coupon.webapp.models.FilenameMapperInterface;
+import com.coupon.webapp.models.PropertiesFileMap;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -55,9 +56,9 @@ public class MvcWebConfig extends WebMvcConfigurerAdapter {
 
     @Bean(name = "filenameMapper")
     @Scope(value = "request", proxyMode = ScopedProxyMode.INTERFACES)
-    public FilenameMapper filenameMapper(
-            @Qualifier("defaultFilenameMapper") final FilenameMapper defaultFilenameMapper,
-            @Qualifier("localFilenameMapper") final FilenameMapper localFilenameMapper
+    public FilenameMapperInterface filenameMapper(
+            @Qualifier("defaultFilenameMapper") final FilenameMapperInterface defaultFilenameMapper,
+            @Qualifier("localFilenameMapper") final FilenameMapperInterface localFilenameMapper
     ) {
         if (staticsLocal) {
             return localFilenameMapper;
@@ -67,7 +68,7 @@ public class MvcWebConfig extends WebMvcConfigurerAdapter {
     }
 
     @Bean(name = "defaultFilenameMapper")
-    public FilenameMapper defaultFilenameMapper(
+    public FilenameMapperInterface defaultFilenameMapper(
             @Value("${static.host:}") final String staticHost,
             final PropertiesFileMap propertiesFileMap
     ) {
@@ -75,11 +76,11 @@ public class MvcWebConfig extends WebMvcConfigurerAdapter {
     }
 
     @Bean(name = "localFilenameMapper")
-    public FilenameMapper localFilenameMapper() {
+    public FilenameMapperInterface localFilenameMapper() {
         return buildFilenameMapper("https://localhost:3001", true, null);
     }
 
-    private FilenameMapper buildFilenameMapper(final String staticHost, final boolean isLocal, final PropertiesFileMap propertiesFileMap) {
+    private FilenameMapperInterface buildFilenameMapper(final String staticHost, final boolean isLocal, final PropertiesFileMap propertiesFileMap) {
         final FilenameMapper filenameMapper = new FilenameMapper();
         if (!staticHost.isEmpty()) {
             filenameMapper.setHost(staticHost);
