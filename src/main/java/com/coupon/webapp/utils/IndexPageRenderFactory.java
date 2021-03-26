@@ -3,7 +3,7 @@ package com.coupon.webapp.utils;
 import com.coupon.webapp.models.ImmutableInitialAppState;
 import com.coupon.webapp.models.InitialAppState;
 import com.coupon.webapp.models.StaticResources;
-import com.coupon.webapp.services.FilenameMapper;
+import com.coupon.webapp.models.FilenameMapperInterface;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.ImmutableMap;
@@ -19,14 +19,14 @@ import javax.servlet.http.HttpServletRequest;
 public class IndexPageRenderFactory {
     private static final ObjectMapper OBJECT_MAPPER = ObjectMappers.createObjectMapper();
 
-    private final FilenameMapper filenameMapper;
+    private final FilenameMapperInterface filenameMapper;
     private final HttpServletRequest httpServletRequest;
     private final String exampleName;
     private final String exampleValue;
 
     @Autowired
     public IndexPageRenderFactory(
-            @Qualifier("filenameMapper") final FilenameMapper filenameMapper,
+            @Qualifier("filenameMapper") final FilenameMapperInterface filenameMapper,
             final HttpServletRequest httpServletRequest,
             @Value("${example.name}") final String exampleName,
             @Value("${example.value}") final String exampleValue
