@@ -6,4 +6,5 @@
     <suppress checks="JavadocType" files=".*" />
     <suppress checks="JavadocStyle" files=".*" />
     <suppress checks="LineLength" files=".*" />
+    <suppress checks="ImportOrder" files=".*" />
 </suppressions>
