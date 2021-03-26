@@ -1,7 +1,5 @@
 package com.coupon.webapp.models;
 
-import com.coupon.webapp.services.FilenameMapper;
-
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -33,9 +31,9 @@ public class StaticResources {
         private final Map<String, String> imageResources = new HashMap<>();
 
         private final HttpServletRequest httpServletRequest;
-        private final FilenameMapper filenameMapper;
+        private final FilenameMapperInterface filenameMapper;
 
-        public Builder(final HttpServletRequest httpServletRequest, final FilenameMapper filenameMapper) {
+        public Builder(final HttpServletRequest httpServletRequest, final FilenameMapperInterface filenameMapper) {
             this.httpServletRequest = httpServletRequest;
             this.filenameMapper = filenameMapper;
         }
