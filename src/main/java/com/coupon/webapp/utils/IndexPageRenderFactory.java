@@ -59,7 +59,6 @@ public class IndexPageRenderFactory {
             final StaticResources staticResources = new StaticResources.Builder(httpServletRequest, filenameMapper)
                     .cssResource("/static/styles/" + appName + ".css")
                     .jsResource("/static/scripts/" + appName + ".js")
-                    .imageResource("/static/image/favicon.ico")
                     .build();
 
             final InitialAppState initialAppState = ImmutableInitialAppState.builder()
@@ -67,10 +66,12 @@ public class IndexPageRenderFactory {
                     .setExampleValue(exampleValue)
                     .build();
 
+            final String test = OBJECT_MAPPER.writeValueAsString(initialAppState);
+
             return new ModelAndView("index", ImmutableMap.<String, Object>builder()
                     .put("staticResources", staticResources)
                     .put("initialAppStateJson", OBJECT_MAPPER.writeValueAsString(initialAppState))
-                    .put("favicon", filenameMapper.getContentUrl("/images/" + faviconFileName, httpServletRequest))
+                    .put("favicon", filenameMapper.getContentUrl("/static/images/" + faviconFileName, httpServletRequest))
                     .put("title", title)
                     .build()
             );

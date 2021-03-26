@@ -28,7 +28,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
         includeFilters = @ComponentScan.Filter(value = {Controller.class, ControllerAdvice.class, Component.class}),
         basePackages = {
                 "com.coupon.webapp.controllers",
-                "com.coupon.webapp.services",
                 "com.coupon.webapp.utils",
         }
 )

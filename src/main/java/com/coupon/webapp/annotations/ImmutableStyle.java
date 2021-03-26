@@ -11,7 +11,7 @@ import java.lang.annotation.Target;
         ElementType.PACKAGE,
         ElementType.TYPE,
 })
-@Retention(RetentionPolicy.SOURCE)
+@Retention(RetentionPolicy.CLASS)
 @Value.Style(
         init = "set*",
         get = { "get", "is*" },
