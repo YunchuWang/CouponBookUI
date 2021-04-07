@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { browserHistory } from 'react-router';
+import { syncHistoryWithStore } from 'react-router-redux';
 // @ts-ignore
 import MyImage from './images/banner.jpg';
 // @ts-ignore
@@ -19,5 +21,6 @@ const App = () => {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
+    syncHistoryWithStore(browserHistory);
     ReactDOM.render(<App />, document.getElementById('content'));
 });
