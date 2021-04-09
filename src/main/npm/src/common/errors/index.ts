@@ -2,6 +2,7 @@ export class RequestInfo {
     method: string;
     url: string;
     payload?: object;
+    requestUid?: string;
 
     constructor(method: string, url: string, payload: object) {
         this.method = method;
