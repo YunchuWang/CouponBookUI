@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/example")
-public class ExampleController {
+@RequestMapping("/api/sample")
+public class SampleController {
 
-    private static final Logger LOG = LoggerFactory.getLogger(ExampleController.class);
+    private static final Logger LOG = LoggerFactory.getLogger(SampleController.class);
 
-    public ExampleController() {
+    public SampleController() {
         // empty
     }
 
@@ -22,7 +22,7 @@ public class ExampleController {
             @RequestParam(defaultValue = "") final String query,
             @RequestParam(defaultValue = "0") final int page
     ) {
-        LOG.info("GET /api/example is visited with query = {} and page = {}", query, page);
-        return "example value: " + query + " page: " + page;
+        LOG.info("GET /api/sample is visited with query = {}, and page = {}", query, page);
+        return "sample value: " + query + " page: " + page;
     }
 }

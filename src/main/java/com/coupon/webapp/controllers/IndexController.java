@@ -19,6 +19,7 @@ public class IndexController {
 
     private static final String ROOT_URL = "/";
     private static final String EXAMPLE_URL = "/example";
+    private static final String SAMPLE_URL = "/sample";
 
     private final IndexPageRenderFactory indexPageRenderFactory;
 
@@ -30,6 +31,7 @@ public class IndexController {
     @GetMapping(value = {
             ROOT_URL,
             EXAMPLE_URL,
+            SAMPLE_URL,
     })
     public ModelAndView index() throws JsonProcessingException {
         return handleRequest("app");
