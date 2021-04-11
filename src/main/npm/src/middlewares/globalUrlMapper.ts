@@ -76,7 +76,7 @@ function remapParams(state: CouponWebappState, action: any): URLParams | undefin
 
 function updateParams(params: URLParams, withoutExtraBrowserHistory: boolean): void {
     const currentLocation = browserHistory.getCurrentLocation();
-    const search = encodeParams(params);
+    const search = encodeParams({ ...params });
     if (search === currentLocation.search) {
         return;
     }

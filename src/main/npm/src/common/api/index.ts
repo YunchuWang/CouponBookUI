@@ -1,4 +1,4 @@
-import {ApiError, ClientError, ConnectionError, RequestInfo, ServerError} from "../errors";
+import { ApiError, ClientError, ConnectionError, RequestInfo, ServerError } from '../errors';
 import * as queryString from 'querystring';
 
 export type Payload = {

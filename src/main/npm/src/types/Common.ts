@@ -11,6 +11,8 @@ export type Location = {
     },
 };
 
+export type PageKind = 'home' | 'example' | 'sample' | 'unknown';
+
 // example page
 export type ExampleContent = {
     name: string,
