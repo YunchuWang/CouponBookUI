@@ -97,7 +97,7 @@ export const globalUrlMapper = (store: any) => (next: any) => (action: any) => {
     next(action);
 
     // url-init is a conventional action that decodes url params into state
-    // it is origined from url and thus should not sync back to url
+    // it is originated from url and thus should not sync back to url
     if (/url-init$/.exec(action.type) || action.__url_mapper_prevent_update) {
         return;
     }
