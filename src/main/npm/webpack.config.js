@@ -81,7 +81,7 @@ const config = {
             {
                 test: /\.ts(x?)$/,
                 exclude: [ '/node_modules/', '/scripts'],
-                use: ['ts-loader', 'babel-loader'],
+                use: ['babel-loader', 'ts-loader'],
             },
         ],
     },

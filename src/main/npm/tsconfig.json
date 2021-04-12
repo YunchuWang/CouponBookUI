@@ -12,7 +12,7 @@
     "strict": true,
     "strictNullChecks": true
   },
-  "baseUrl": "src",
+  "baseUrl": "scripts",
   "include": [
     "scripts/**/*.ts",
     "scripts/**/*.tsx"
@@ -21,8 +21,7 @@
     "scripts"
   ],
   "typeRoots": [
-    "node_modules/@types",
-    "scripts/@types"
+    "node_modules/@types"
   ],
   "outDir": "tsbuild"
 }
