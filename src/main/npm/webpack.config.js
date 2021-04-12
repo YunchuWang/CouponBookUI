@@ -9,8 +9,8 @@ const buildDir = path.join(projectBase, 'build/gen/npm/static');
 
 const config = {
     entry: {
-        'app': './src/app.tsx',
-        'appError': './src/appError.tsx',
+        'app': './scripts/app.tsx',
+        'appError': './scripts/appError.tsx',
     },
     output: {
         path: buildDir,
@@ -75,12 +75,12 @@ const config = {
             },
             {
                 test: /\.js$/,
-                exclude: [ '/node_modules/', '/src/styles'],
+                exclude: [ '/node_modules/', '/scripts'],
                 use: ['babel-loader'],
             },
             {
                 test: /\.ts(x?)$/,
-                exclude: [ '/node_modules/', '/src/styles'],
+                exclude: [ '/node_modules/', '/scripts'],
                 use: ['ts-loader', 'babel-loader'],
             },
         ],
@@ -92,9 +92,9 @@ const config = {
     ],
     'resolve': {
         modules: [
-            path.resolve('./src/scripts'),
-            path.resolve('./src/styles'),
-            path.resolve('./src/images'),
+            path.resolve('./scripts'),
+            path.resolve('./styles'),
+            path.resolve('./images'),
             'node_modules',
         ],
         extensions: ['.js', '.jsx', '.ts', '.tsx', '*'],

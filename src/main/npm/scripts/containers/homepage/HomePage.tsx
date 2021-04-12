@@ -1,9 +1,11 @@
 import React from 'react';
 
-export const HomePage: React.FunctionComponent<any> = () => {
+const HomePage: React.FunctionComponent<any> = () => {
     return (
         <div>
             Home page placeholder!!
         </div>
     );
 };
+
+export default HomePage;

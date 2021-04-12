@@ -59,7 +59,7 @@ function encodeParams(params: URLParams): string {
     const queryStr = Object.keys(params)
         .filter((key) => params[key] != null)
         .sort()
-        .map((key) => `${key}=${encodeURIComponent(params[key] as string)}`)
+        .map((key) => `${key}=${encodeURIComponent((params[key] as string))}`)
         .join('&');
     if (!queryStr) {
         return '';

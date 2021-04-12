@@ -7,3 +7,5 @@ export const ExamplePage: React.FunctionComponent<any> = () => {
         </div>
     );
 };
+
+export default ExamplePage;

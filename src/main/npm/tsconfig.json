@@ -14,15 +14,15 @@
   },
   "baseUrl": "src",
   "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx"
+    "scripts/**/*.ts",
+    "scripts/**/*.tsx"
   ],
   "rootDirs": [
-    "src"
+    "scripts"
   ],
   "typeRoots": [
     "node_modules/@types",
-    "src/@types"
+    "scripts/@types"
   ],
   "outDir": "tsbuild"
 }

@@ -31,7 +31,7 @@ class _NavBar extends React.PureComponent<Props> {
     }
 }
 
-export const NavBar = connect(
+export default connect(
     (state: CouponWebappState) => ({
         exampleState: state.example,
         sampleState: state.sample,
