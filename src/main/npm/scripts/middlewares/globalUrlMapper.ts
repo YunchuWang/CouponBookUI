@@ -64,7 +64,7 @@ function encodeParams(params: URLParams): string {
     if (!queryStr) {
         return '';
     }
-    return queryStr;
+    return `?${queryStr}`;
 }
 
 function remapParams(state: CouponWebappState, action: any): URLParams | undefined {

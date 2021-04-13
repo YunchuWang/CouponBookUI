@@ -15,6 +15,9 @@ export const getExampleState = (state: CouponWebappState): ExampleState => {
 };
 
 // entity types
+type ExampleResponse = {
+    displayStr: string,
+};
 
 // pure actions
 type LoadExampleContentStartAction = {
@@ -83,11 +86,11 @@ const stopLoadingExamples = (): LoadExampleContentStopAction => {
 export const loadExamples: any = (page: number, query: string) => async (dispatch: CouponWebappDispatch, getState: any) => {
     dispatch(withoutExtraBrowserHistory(loadExampleContentStart()));
     try {
-        const response: string = await API.Example.withRequestParams({
+        const response: ExampleResponse = await API.Example.withRequestParams({
             query,
             page,
         }).get();
-        dispatch(loadContentCompleted(page, query, response, []));
+        dispatch(loadContentCompleted(page, query, response.displayStr, []));
     } catch (e) {
         // TODO: extra steps to handle exception
         throw e;
@@ -96,7 +99,7 @@ export const loadExamples: any = (page: number, query: string) => async (dispatc
     }
 };
 
-export const changeExamplePage = (page: number) => async (dispatch: CouponWebappDispatch, getState: any) => {
+export const changeExamplePage: any = (page: number) => async (dispatch: CouponWebappDispatch, getState: any) => {
     const state = getState();
     const { query } = getExampleState(state);
     dispatch({
@@ -106,7 +109,7 @@ export const changeExamplePage = (page: number) => async (dispatch: CouponWebapp
     dispatch(loadExamples(page, query));
 };
 
-export const updateExampleQuery = (query: string) => async (dispatch: CouponWebappDispatch, getState: any) => {
+export const updateExampleQuery: any = (query: string) => async (dispatch: CouponWebappDispatch, getState: any) => {
     const state = getState();
     const { page } = getExampleState(state);
     dispatch({
@@ -186,5 +189,5 @@ export const urlMapper = {
 
     matchAction(action: CouponWebappPureAction) {
         return action.type.startsWith('example-page/');
-    }
+    },
 };
