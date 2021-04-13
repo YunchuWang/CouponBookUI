@@ -27,6 +27,7 @@
     "@types/react-router": "^3.0.2",
     "@types/react-router-redux": "^4.0.8",
     "@types/redux-logger": "^2.7.4",
+    "autobind-decorator": "^2.4.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-loader": "^8.0.6",
     "babel-plugin-react-css-modules": "^5.2.6",

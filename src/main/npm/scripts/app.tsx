@@ -7,7 +7,7 @@ import { store } from './store';
 import { decodeURL } from './middlewares/globalUrlMapper';
 import NavBar from './components/navbar/NavBar';
 import HomePage from './containers/homepage/HomePage';
-import ExamplePage from './containers/examplepage/ExamplePage';
+import { ExamplePage } from './containers/examplepage/ExamplePage';
 import SamplePage from './containers/samplepage/SamplePage';
 import NoFoundPage from './containers/errorpage/NoFoundPage';
 import { CouponWebappDispatch, Location, PageKind } from './types/Common';
