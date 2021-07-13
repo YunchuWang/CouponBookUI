@@ -6,3 +6,4 @@
 /src/main/npm/coverage
 /src/main/npm/logs
 /src/main/npm/node_modules
+/src-jooq-gen/build
