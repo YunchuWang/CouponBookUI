@@ -5,6 +5,8 @@ Front end is served through webpack-server at https://localhost:3001 when runnin
 
 ### Set up
 
+* Make sure a local db called testdb is available for jooq
+* Make sure a local db called localTest is available
 * Run `gradle clean` to start with clean repo
 * Run `gradle build` (output dir will be /build) to compile java and generate annotated code
 * Run Spring Boot with VM option `-Dspring.profiles.active=dev` (check localhost:8080 to see if the back end is up)

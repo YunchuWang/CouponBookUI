@@ -8,4 +8,3 @@
  */
 
 rootProject.name = 'coupon-webapp'
-include 'src-jooq-gen'
